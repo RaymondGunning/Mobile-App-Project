@@ -1,0 +1,43 @@
+
+<ion-header>
+  <ion-toolbar>
+    <!--user Input and save button-->
+    <div class= "Welcome">Welcome {{firstname}}</div>
+    <!--Movies Header-->
+    <ion-title>Movies</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  <!--page navigation buttons-->
+<div text-center >
+  <ion-button (click)="goToShows()">Shows</ion-button>
+  <ion-button (click)="goToHome()">Home</ion-button>
+  <ion-button (click)="goToUpcoming()">Upcoming</ion-button>
+  <br>
+</div>
+
+<div *ngFor="let movie of TopRatedMovies">
+
+  <!--data being pulled from the api-->
+  <ion-card>
+    
+    <h3 class="Title">{{movie.title}}</h3>
+
+    <!--Api Does not want to display a picture but all of the code is here to do so-->
+    <img class="img" height ="200" width="400" src="{{movie.poster_path}}"> 
+
+    <p>{{movie.release_date}}</p>
+
+    <div>
+      <p class="MovieContent">{{movie.overview}}</p> 
+    </div>
+
+    <br>
+
+  </ion-card>  
+</div>     
+
+</ion-content>

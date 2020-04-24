@@ -9,7 +9,19 @@ ion-content div
   text-align: center;
 }
 
-.NewsContent
+ 
+.info
+{
+  text-align: wrap;
+
+}
+
+.Title
+{
+  color:black;
+}
+
+.MovieContent
 {
   text-align: center;
   margin-right: 400px;
@@ -21,7 +33,7 @@ ion-content div
 .img
 {
   border:5px solid #021a40;
-}  
+}
 
 ion-card{
   margin-right: 250px;
@@ -29,29 +41,8 @@ ion-card{
   background-color: rgb(221, 227, 233);
 }
 
-.Title
+.Welcome
 {
-color:black;
-
-}
-
-.HeaderInput
-{
-  margin-left: 600px;
-}
-
-.Home
-{
-  margin-top: 50px;
-}
-
-.SaveButton
-{
-margin-left: 1200px;
-}
-
-.NameOutput
-{
-  color:black;
   margin-left: 1200px;
+  color:black;
 }

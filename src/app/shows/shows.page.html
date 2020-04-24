@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+
+    <div class= "Welcome">Welcome {{firstname}}</div>
+    <!--Shows Header-->
+    <ion-title>Shows</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!--page navigation buttons-->
+<div text-center>
+  <ion-button (click)="goToHome()">Home</ion-button>
+  <ion-button (click)="goToMovies()">Movies</ion-button>
+  <ion-button (click)="goToUpcoming()">Upcoming</ion-button>
+</div>
+
+<!--for loop-->
+<div  *ngFor="let show of TopRatedShows">
+
+  <!--Pulling data from the api-->
+  <ion-card>
+
+    <h3 class="Title">{{show.name}}</h3>
+  
+    <!--Api Does not want to display a picture but all of the code is here to do so-->
+    <img class="img" height ="200" width="400" src="{{show.poster_path}}"> 
+
+    <p>{{show.first_air_date}}</p>
+
+   <div>
+    <p class="ShowContent">{{show.overview}}</p> 
+   </div>
+
+  </ion-card>
+  
+</div>
+
+</ion-content>
+ 

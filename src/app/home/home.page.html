@@ -1,20 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <div>
+      
+      <div class= "NameOutput">
+        {{name}}
+      </div>
+      <!--Home Header-->
+      <ion-title class= "Home" id>Home</ion-title>
+      <!--user Input and save button-->
+      <ion-input [(ngModel)]="name" class= "HeaderInput" placeholder="Enter Your Name"></ion-input>
+      <ion-button class="SaveButton" (click)="onSave()">Save</ion-button>
+    </div>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<!--page navigation buttons-->
+<div text-center>
+  <ion-button (click)="goToMovies()">Movies</ion-button>
+  <ion-button (click)="goToShows()">Shows</ion-button>
+  <ion-button (click)="goToUpcoming()">Upcoming</ion-button>
+</div>
+<!--for loop-->
+<div *ngFor="let home of HomePageData">
+
+  <!--Pulling data from the api-->
+  <ion-card>
+    <b>
+  <h2 class= "Title">{{home.title}}</h2>
+    </b> 
+  <img class="img" height ="200" width="400" src="{{home.urlToImage}}"> 
+
+  <p>{{home.publishedAt}}</p>
+
+  <div>
+    <p class="NewsContent">{{home.content}}</p>
   </div>
+
+  </ion-card>
+
+</div>
+
 </ion-content>
+
+<br>

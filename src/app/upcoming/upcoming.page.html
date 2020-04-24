@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <div class= "Welcome">Welcome {{firstname}}</div>
+    <!--Upcoming Movies and Shows Header-->
+    <ion-title>Upcoming Movies and Shows</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--page navigation buttons-->
+<div text-center>
+  <ion-button (click)="goToHome()">Home</ion-button>
+  <ion-button (click)="goToMovies()">Movies</ion-button>
+  <ion-button (click)="goToShows()">Shows</ion-button>
+</div>
+<!--for loop-->
+<div *ngFor="let UpcomingShowsMovies of UpcomingArray">
+
+  <ion-card>
+<!--Pulling data from the api-->
+    <h3 class="Title">{{UpcomingShowsMovies.title}}</h3>
+  
+    <!--Api Does not want to display a picture but all of the code is here to do so-->
+   <img class="img" height ="200" width="400" src="{{UpcomingShowsMovies.poster_path}}"> 
+
+   <p>{{UpcomingShowsMovies.release_date}}</p>
+
+    <div>
+     <p class="UpcomingContent">{{UpcomingShowsMovies.overview}}</p> 
+     <br>
+    </div>
+
+  </ion-card>
+
+</div>
+
+</ion-content>
